@@ -15,7 +15,7 @@ load_dotenv()
 # Configure API keys
 GOOGLE_API_KEY = os.getenv("GEMINI_API_KEY")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-HF_API_KEY = os.getenv("HF_API_KEY")
+HF_API_KEY = os.getenv("HF_API_KEY")  # Changed to HF_API_KEY
 
 if not GOOGLE_API_KEY:
     st.error("Please set GEMINI_API_KEY in .env file")
@@ -73,6 +73,12 @@ st.markdown("""
     }
     .model-selector {
         margin-bottom: 20px;
+    }
+    .solution-container {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: #f0f2f6;
     }
     div[data-testid="stExpander"] div[role="button"] p {
         font-size: 1.1em;
@@ -316,7 +322,10 @@ def main():
                                         with st.spinner("Generating solution..."):
                                             solution = get_solution(question)
                                             if solution:
-                                                st.write(solution)  # Changed from st.markdown to st.write
+                                                st.markdown(
+                                                    f'<div class="solution-container">{solution}</div>',
+                                                    unsafe_allow_html=True
+                                                )
                                                 st.download_button(
                                                     label="Download Solution",
                                                     data=solution,
