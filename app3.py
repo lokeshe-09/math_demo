@@ -188,10 +188,7 @@ def get_solution(question):
 {question}
 
 Please format your answer as follows:
-1. First identify the key information
-2. Break down the solution into clear steps
-3. Show all calculations
-4. Provide the final answer
+1. give me the accurate and correct answer with simple steps of explanation 
 5. If it's a multiple choice question, clearly indicate which option is correct and why"""
                 }
             ]
