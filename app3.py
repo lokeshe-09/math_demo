@@ -183,12 +183,12 @@ def get_solution(question):
             messages = [
                 {
                     "role": "user",
-                    "content": f"""Please solve this math question step by step and provide a clear explanation:
+                    "content": f"""Please solve this math question step by step with few steps:
                     
 {question}
 
 Please format your answer as follows:
-1. give me the accurate and correct answer with simple steps of explanation 
+1. give me the accurate and correct answer with few simple steps
 5. If it's a multiple choice question, clearly indicate which option is correct and why"""
                 }
             ]
