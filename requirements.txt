@@ -3,3 +3,4 @@ google-generativeai
 python-dotenv 
 Pillow 
 groq
+huggingface-hub
